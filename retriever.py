@@ -10,7 +10,7 @@ class Retriever:
     def search(self, query):
         results = []
         for doc in documents:
-            if any(word.doc() in doc.lower for word in query.split()):
+            if any(word.lower() in doc.lower() for word in query.split()):
                 results.append(doc)
         
         return results[:2]
